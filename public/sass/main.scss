@@ -185,17 +185,17 @@ body {
                     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 1);
                 }
                 &::-moz-range-progress {
-                    background-color: #ef2857;
+                    background-color: #ffd166;
                 }
                 &::-moz-range-track {
-                    background-color: #000;
+                    background-color: #ffd166;
                 }
                 /* IE*/
                 &::-ms-fill-lower {
-                    background-color: #ef2857;
+                    background-color: #ffd166;
                 }
                 &::-ms-fill-upper {
-                    background-color: #000;
+                    background-color: #ffd166;
                 }
             }
         }
@@ -231,15 +231,4 @@ body {
             }
         }
     }
-}
-
-/* Just for the preview :P */
-.item[id='1'] {
-    background-image: url(https://ia600400.us.archive.org/21/items/mbid-3d5fca37-ab04-4c74-ba0e-48f557f9485f/mbid-3d5fca37-ab04-4c74-ba0e-48f557f9485f-13694326388.jpg);
-}
-.item[id='2'] {
-    background-image: url(https://ia600609.us.archive.org/29/items/mbid-412a55e2-4d85-4577-afcc-29f1cd062960/mbid-412a55e2-4d85-4577-afcc-29f1cd062960-16979283605.jpg);
-}
-.item[id='4'] {
-    background-image: url(https://ia800307.us.archive.org/6/items/mbid-8e7746ca-7832-41b2-a731-de5b0010f37d/mbid-8e7746ca-7832-41b2-a731-de5b0010f37d-13249592911.jpg);
 }
