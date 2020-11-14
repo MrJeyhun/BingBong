@@ -1,6 +1,6 @@
 body {
   font-family: 'Poppins', sans-serif;
-  background: #ffd166; }
+  background-image: linear-gradient(to right, #434343 0%, black 100%); }
 
 .app__container {
   position: absolute;
@@ -14,7 +14,21 @@ body {
   left: 0;
   background: #fff;
   border-radius: 10px;
-  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11), 0 5px 15px 0 rgba(0, 0, 0, 0.08); }
+  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11), 0 5px 15px 0 rgba(0, 0, 0, 0.08);
+  user-select: none; }
+
+.app__brand {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+  font-style: italic;
+  font-weight: 700; }
+  .app__brand--part1 {
+    color: #ffd166; }
+  .app__brand--part2 {
+    color: rgba(0, 0, 0, 0.8); }
 
 .app__menu-btn {
   position: absolute;
@@ -23,14 +37,14 @@ body {
   font-size: 25px;
   cursor: pointer; }
   .app__menu-btn:hover {
-    color: #ef2857; }
+    color: #ffd166; }
 
 .app__carousel {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 50%; }
+  height: 45%; }
   .app__carousel__item {
     display: inline-block;
     position: absolute;
@@ -67,46 +81,48 @@ body {
 
 .app__info {
   width: 100%;
-  height: 100px;
+  height: 75px;
   text-align: center; }
   .app__info #song {
-    padding-top: 10px;
     font-size: 25px;
     font-weight: 700; }
-  .app__info #artist {
-    margin-top: 5px; }
   .app__info a {
     display: block;
     text-decoration: none;
     color: #000;
-    transition: all 0.3s; }
-    .app__info a:hover {
-      color: #ef2857; }
+    transition: all 0.3s;
+    cursor: default; }
 
 .app__controls {
   width: 100%;
   height: 125px; }
-  .app__controls__slider {
+  .app__controls__voice {
+    width: 20%;
+    padding-top: 1rem;
+    margin: auto !important; }
+    .app__controls__voice li#volume {
+      font-size: 20px; }
+  .app__controls__slider, .app__controls__voice {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0; }
-    .app__controls__slider span {
+    .app__controls__slider span, .app__controls__voice span {
       margin: 0 10px;
       font-size: 12px; }
-    .app__controls__slider input {
+    .app__controls__slider input, .app__controls__voice input {
       -webkit-appearance: none;
       appearance: none;
       width: 60%;
       height: 4px;
-      background: #000;
+      background: #ffd166;
       border-radius: 10px;
       outline: none;
       cursor: pointer;
       /* -webkit- (Chrome, Opera, Safari, Edge) */
       /* -moz- (Firefox) */
       /* IE*/ }
-      .app__controls__slider input::-webkit-slider-thumb {
+      .app__controls__slider input::-webkit-slider-thumb, .app__controls__voice input::-webkit-slider-thumb {
         -webkit-appearance: none;
         appearance: none;
         width: 15px;
@@ -117,29 +133,29 @@ body {
         outline: none;
         box-shadow: 0 1px 4px 0 black;
         transition: all 0.2s; }
-        .app__controls__slider input::-webkit-slider-thumb:active {
+        .app__controls__slider input::-webkit-slider-thumb:active, .app__controls__voice input::-webkit-slider-thumb:active {
           transform: scale(1.5); }
-      .app__controls__slider input::-moz-range-thumb {
+      .app__controls__slider input::-moz-range-thumb, .app__controls__voice input::-moz-range-thumb {
         width: 15px;
         height: 15px;
         border-radius: 100%;
         background: #fff;
         cursor: pointer;
         box-shadow: 0 1px 4px 0 black; }
-      .app__controls__slider input::-moz-range-progress {
+      .app__controls__slider input::-moz-range-progress, .app__controls__voice input::-moz-range-progress {
         background-color: #ef2857; }
-      .app__controls__slider input::-moz-range-track {
+      .app__controls__slider input::-moz-range-track, .app__controls__voice input::-moz-range-track {
         background-color: #000; }
-      .app__controls__slider input::-ms-fill-lower {
+      .app__controls__slider input::-ms-fill-lower, .app__controls__voice input::-ms-fill-lower {
         background-color: #ef2857; }
-      .app__controls__slider input::-ms-fill-upper {
+      .app__controls__slider input::-ms-fill-upper, .app__controls__voice input::-ms-fill-upper {
         background-color: #000; }
   .app__controls__btns {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0;
-    margin-top: 50px;
+    margin-top: 40px;
     padding: 0;
     list-style: none; }
     .app__controls__btns li {
@@ -150,7 +166,7 @@ body {
       cursor: pointer;
       transition: all 0.3s; }
       .app__controls__btns li:hover {
-        color: #ef2857; }
+        color: #ffd166; }
     .app__controls__btns li#play {
       font-size: 35px; }
     .app__controls__btns li#shuffle,
