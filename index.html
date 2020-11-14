@@ -12,14 +12,51 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="assets/css/index.css" />
     <!--Google Fonts-->
-    <link
-      href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <script
+      src="https://kit.fontawesome.com/ee4f7cdaa4.js"
+      crossorigin="anonymous"
+    ></script>
     <title>BingBong</title>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="app"></div>
+    <div id="app">
+      <div class="app__container">
+        <div class="app__menu-btn fas fa-fw fa-bars"></div>
+        <div class="app__carousel">
+          <ul>
+            <li class="app__carousel__item--main" id="1"></li>
+            <li class="app__carousel__item--right" id="2"></li>
+            <li class="app__carousel__item--back" id="3"></li>
+            <li class="app__carousel__item--left" id="4"></li>
+          </ul>
+        </div>
+
+        <div class="app__info">
+          <a href="#" id="song">Flume</a>
+          <a href="#" id="artist">Helix</a>
+        </div>
+
+        <div class="app__controls">
+          <div class="app__controls__slider">
+            <!-- Current time -->
+            <span>02:08</span>
+             <!--class removed  -->
+            <input type="range" min="1" max="100" value="50" id="myRange">
+            <!-- Total time -->
+            <span>05:23</span> 
+          </div>
+
+          <ul>
+            <li id="prev" class="fas fa-fw fa-forward"></li>
+            <li id="play" class="fas fa-fw fa-play"></li>
+            <li id="next" class="fas fa-fw fa-forward"></li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
   </body>
 </html>
