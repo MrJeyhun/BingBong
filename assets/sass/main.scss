@@ -51,6 +51,7 @@ body {
 
             &--main {
                 z-index: 3000;
+                background-image: url(https://ia600400.us.archive.org/21/items/mbid-3d5fca37-ab04-4c74-ba0e-48f557f9485f/mbid-3d5fca37-ab04-4c74-ba0e-48f557f9485f-13694326388.jpg);
             }
             &--left,
             &--right {
@@ -60,9 +61,11 @@ body {
             }
             &--left {
                 margin-left: -8em;
+                background-image: url(https://ia800307.us.archive.org/6/items/mbid-8e7746ca-7832-41b2-a731-de5b0010f37d/mbid-8e7746ca-7832-41b2-a731-de5b0010f37d-13249592911.jpg);
             }
             &--right {
                 margin-left: 8em;
+                background-image: url(https://ia600609.us.archive.org/29/items/mbid-412a55e2-4d85-4577-afcc-29f1cd062960/mbid-412a55e2-4d85-4577-afcc-29f1cd062960-16979283605.jpg);
             }
             &--back {
                 opacity: 0.05;
@@ -105,4 +108,113 @@ body {
             }
         }
     }
+
+    &__controls {
+        width: 100%;
+        height: 125px;
+
+        &__slider {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+
+            span {
+                margin: 0 10px;
+                font-size: 12px;
+            }
+
+            input {
+                -webkit-appearance: none;
+                appearance: none;
+                width: 60%;
+                height: 4px;
+                background: #000;
+                border-radius: 10px;
+                outline: none;
+                cursor: pointer;
+
+                /* -webkit- (Chrome, Opera, Safari, Edge) */
+                &::-webkit-slider-thumb {
+                    -webkit-appearance: none;
+                    appearance: none;
+                    width: 15px;
+                    height: 15px;
+                    border-radius: 100%;
+                    background: #fff;
+                    cursor: pointer;
+                    outline: none;
+                    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 1);
+                    transition: all 0.2s;
+                    &:active {
+                        transform: scale(1.5);
+                    }
+                }
+
+                /* -moz- (Firefox) */
+                &::-moz-range-thumb {
+                    width: 15px;
+                    height: 15px;
+                    border-radius: 100%;
+                    background: #fff;
+                    cursor: pointer;
+                    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 1);
+                }
+                &::-moz-range-progress {
+                    background-color: #ef2857;
+                }
+                &::-moz-range-track {
+                    background-color: #000;
+                }
+                /* IE*/
+                &::-ms-fill-lower {
+                    background-color: #ef2857;
+                }
+                &::-ms-fill-upper {
+                    background-color: #000;
+                }
+            }
+        }
+
+        &__btns {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            margin-top: 50px;
+            padding: 0;
+            list-style: none;
+
+            li {
+                position: relative;
+                display: inline-block;
+                margin: 0 30px;
+                font-size: 25px;
+                cursor: pointer;
+                transition: all 0.3s;
+
+                &:hover {
+                    color: #ef2857;
+                }
+            }
+
+            li#prev {
+                transform: rotate(180deg);
+            }
+            li#play {
+                font-size: 35px;
+            }
+        }
+    }
+}
+
+/* Just for the preview :P */
+.item[id='1'] {
+    background-image: url(https://ia600400.us.archive.org/21/items/mbid-3d5fca37-ab04-4c74-ba0e-48f557f9485f/mbid-3d5fca37-ab04-4c74-ba0e-48f557f9485f-13694326388.jpg);
+}
+.item[id='2'] {
+    background-image: url(https://ia600609.us.archive.org/29/items/mbid-412a55e2-4d85-4577-afcc-29f1cd062960/mbid-412a55e2-4d85-4577-afcc-29f1cd062960-16979283605.jpg);
+}
+.item[id='4'] {
+    background-image: url(https://ia800307.us.archive.org/6/items/mbid-8e7746ca-7832-41b2-a731-de5b0010f37d/mbid-8e7746ca-7832-41b2-a731-de5b0010f37d-13249592911.jpg);
 }
