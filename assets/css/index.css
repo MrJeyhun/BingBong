@@ -151,10 +151,11 @@ body {
       transition: all 0.3s; }
       .app__controls__btns li:hover {
         color: #ef2857; }
-    .app__controls__btns li#prev {
-      transform: rotate(180deg); }
     .app__controls__btns li#play {
       font-size: 35px; }
+    .app__controls__btns li#shuffle,
+    .app__controls__btns li#repeat {
+      font-size: 15px; }
 
 /* Just for the preview :P */
 .item[id='1'] {
