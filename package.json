@@ -4,11 +4,15 @@
   "description": "An audioplayer, created with Vanilla Js",
   "main": "index.js",
   "scripts": {
-    "compile:sass": "node-sass assets/sass/main.scss assets/css/index.css -w"
+    "compile:sass": "node-sass assets/sass/main.scss assets/css/index.css -w",
+    "start": "node server/server.js"
   },
   "author": "MrJeyhun",
   "license": "ISC",
   "devDependencies": {
     "node-sass": "^5.0.0"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }

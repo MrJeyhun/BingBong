@@ -1,0 +1,174 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-image: linear-gradient(to right, #434343 0%, black 100%); }
+
+.app__container {
+  position: absolute;
+  height: 450px;
+  width: 700px;
+  margin: auto;
+  padding: 15px 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11), 0 5px 15px 0 rgba(0, 0, 0, 0.08);
+  user-select: none; }
+
+.app__brand {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+  font-style: italic;
+  font-weight: 700; }
+  .app__brand--part1 {
+    color: #ffd166; }
+  .app__brand--part2 {
+    color: rgba(0, 0, 0, 0.8); }
+
+.app__menu-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 25px;
+  cursor: pointer; }
+  .app__menu-btn:hover {
+    color: #ffd166; }
+
+.app__carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 45%; }
+  .app__carousel__item {
+    display: inline-block;
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: #000;
+    background-size: 100% 100%;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out; }
+    .app__carousel__item--main {
+      z-index: 3000;
+      background-image: url(https://ia600400.us.archive.org/21/items/mbid-3d5fca37-ab04-4c74-ba0e-48f557f9485f/mbid-3d5fca37-ab04-4c74-ba0e-48f557f9485f-13694326388.jpg); }
+    .app__carousel__item--left, .app__carousel__item--right {
+      z-index: 1000;
+      transform: scale(0.75);
+      opacity: 0.3; }
+    .app__carousel__item--left {
+      margin-left: -8em;
+      background-image: url(https://ia800307.us.archive.org/6/items/mbid-8e7746ca-7832-41b2-a731-de5b0010f37d/mbid-8e7746ca-7832-41b2-a731-de5b0010f37d-13249592911.jpg); }
+    .app__carousel__item--right {
+      margin-left: 8em;
+      background-image: url(https://ia600609.us.archive.org/29/items/mbid-412a55e2-4d85-4577-afcc-29f1cd062960/mbid-412a55e2-4d85-4577-afcc-29f1cd062960-16979283605.jpg); }
+    .app__carousel__item--back {
+      opacity: 0.05;
+      -webkit-transform: scale(0.5);
+      -moz-transform: scale(0.5);
+      transform: scale(0.5); }
+  .app__carousel ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0; }
+
+.app__info {
+  width: 100%;
+  height: 75px;
+  text-align: center; }
+  .app__info #song {
+    font-size: 25px;
+    font-weight: 700; }
+  .app__info a {
+    display: block;
+    text-decoration: none;
+    color: #000;
+    transition: all 0.3s;
+    cursor: default; }
+
+.app__controls {
+  width: 100%;
+  height: 125px; }
+  .app__controls__voice {
+    width: 20%;
+    padding-top: 1rem;
+    margin: auto !important; }
+    .app__controls__voice li#volume {
+      font-size: 20px; }
+  .app__controls__slider, .app__controls__voice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0; }
+    .app__controls__slider span, .app__controls__voice span {
+      margin: 0 10px;
+      font-size: 12px; }
+    .app__controls__slider input, .app__controls__voice input {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 60%;
+      height: 4px;
+      background: #ffd166;
+      border-radius: 10px;
+      outline: none;
+      cursor: pointer;
+      /* -webkit- (Chrome, Opera, Safari, Edge) */
+      /* -moz- (Firefox) */
+      /* IE*/ }
+      .app__controls__slider input::-webkit-slider-thumb, .app__controls__voice input::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 15px;
+        height: 15px;
+        border-radius: 100%;
+        background: #fff;
+        cursor: pointer;
+        outline: none;
+        box-shadow: 0 1px 4px 0 black;
+        transition: all 0.2s; }
+        .app__controls__slider input::-webkit-slider-thumb:active, .app__controls__voice input::-webkit-slider-thumb:active {
+          transform: scale(1.5); }
+      .app__controls__slider input::-moz-range-thumb, .app__controls__voice input::-moz-range-thumb {
+        width: 15px;
+        height: 15px;
+        border-radius: 100%;
+        background: #fff;
+        cursor: pointer;
+        box-shadow: 0 1px 4px 0 black; }
+      .app__controls__slider input::-moz-range-progress, .app__controls__voice input::-moz-range-progress {
+        background-color: #ffd166; }
+      .app__controls__slider input::-moz-range-track, .app__controls__voice input::-moz-range-track {
+        background-color: #ffd166; }
+      .app__controls__slider input::-ms-fill-lower, .app__controls__voice input::-ms-fill-lower {
+        background-color: #ffd166; }
+      .app__controls__slider input::-ms-fill-upper, .app__controls__voice input::-ms-fill-upper {
+        background-color: #ffd166; }
+  .app__controls__btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    margin-top: 40px;
+    padding: 0;
+    list-style: none; }
+    .app__controls__btns li {
+      position: relative;
+      display: inline-block;
+      margin: 0 30px;
+      font-size: 25px;
+      cursor: pointer;
+      transition: all 0.3s; }
+      .app__controls__btns li:hover {
+        color: #ffd166; }
+    .app__controls__btns li#play {
+      font-size: 35px; }
+    .app__controls__btns li#shuffle,
+    .app__controls__btns li#repeat {
+      font-size: 15px; }

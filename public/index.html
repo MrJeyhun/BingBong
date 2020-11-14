@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="BingBong Audio Player"
+    />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/index.css" />
+    <script type="module" src="http://localhost:3000/main.js" defer></script>
+
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Ubuntu:ital,wght@0,400;1,400;1,700&display=swap" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <script
+      src="https://kit.fontawesome.com/ee4f7cdaa4.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- App script -->
+    <title>BingBong</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="app__container">
+        <div class="app__brand">
+          <span class="app__brand--part1">Bing</span><span class="app__brand--part2">Bong</span>
+        </div>
+        <div class="app__menu-btn fas fa-fw fa-bars"></div>
+        <div class="app__carousel">
+          <ul>
+            <li class="app__carousel__item app__carousel__item--main"></li>
+            <li class="app__carousel__item app__carousel__item--right"></li>
+            <li class="app__carousel__item app__carousel__item--back"></li>
+            <li class="app__carousel__item app__carousel__item--left"></li>
+          </ul>
+        </div>
+
+        <div class="app__info">
+          <a href="#" id="song">Flume</a>
+          <a href="#" id="artist">Helix</a>
+        </div>
+
+        <div class="app__controls">
+          <div class="app__controls__slider">
+            <!-- Current time -->
+            <span>00:00</span>
+             <!--class removed  -->
+            <input type="range" min="1" max="100" value="0" id="myRange">
+            <!-- Total time -->
+            <span>05:23</span> 
+          </div>
+
+          <div class="app__controls__voice">
+            <li id="volume" class="fas fa-fw fa-volume-down"></li>
+            <input type="range" min="1" max="30" value="30" id="myRange">
+          </div>
+
+          <ul class="app__controls__btns">
+            <li id="repeat" class="fas fa-fw fa-redo"></li>
+            <li id="prev" class="fas fa-fw fa-backward"></li>
+            <li id="play" class="fas fa-fw fa-play"></li>
+            <li id="next" class="fas fa-fw fa-forward"></li>
+            <li id="shuffle" class="fas fa-fw fa-random"></li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
