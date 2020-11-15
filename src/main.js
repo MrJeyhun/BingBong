@@ -70,6 +70,12 @@ const nextSong = () => {
 	if (playlist_index > songs.length - 1) {
 		playlist_index = 1;
     }
+
+    playBtn.classList.replace('fa-pause', 'fa-play');
+    setTimeout(() => {
+        playBtn.classList.replace('fa-play', 'fa-pause');
+
+    }, 500)
     getAudio();
 }
 
@@ -78,6 +84,11 @@ const prevSong = () => {
 	if (playlist_index < 1) {
 		playlist_index = songs.length - 1;
     }
+    playBtn.classList.replace('fa-pause', 'fa-play');
+    setTimeout(() => {
+        playBtn.classList.replace('fa-play', 'fa-pause');
+
+    }, 500)
     getAudio();
 }
 
@@ -87,6 +98,11 @@ const switchSong = () => {
     } else {
         playlist_index++;	
     }
+    playBtn.classList.replace('fa-pause', 'fa-play');
+    setTimeout(() => {
+        playBtn.classList.replace('fa-play', 'fa-pause');
+
+    }, 500)
     getAudio();
 }
 
@@ -119,7 +135,7 @@ const setVoice = () => {
 const seekTimeUpdate = () => {
     if (audio.duration) {
         let getCurrentTimeFromAudio = audio.currentTime * (100 / audio.duration);
-        voiceSlider.value = getCurrentTimeFromAudio;
+        timeSlider.value = getCurrentTimeFromAudio;
         let currentMinutes = Math.floor(audio.currentTime / 60);
         let currentSeconds = Math.floor(audio.currentTime - currentMinutes * 60);
         let durationMinutes = Math.floor(audio.duration / 60);
@@ -170,10 +186,10 @@ timeSlider.addEventListener('mousemove', (event) => {
     seeking = false; 
 });
 
-voiceSlider.addEventListener('mousemove', () => setVoice);
+voiceSlider.addEventListener('mousemove', () => setVoice());
 
-audio.addEventListener('timeupdate', () => seekTimeUpdate);
-audio.addEventListener('ended', () => switchSong);
+audio.addEventListener('timeupdate', () => seekTimeUpdate());
+audio.addEventListener('ended', () => switchSong());
 
 
 
