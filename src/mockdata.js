@@ -4,13 +4,13 @@ const songs = ["", "Wish You Were Here", "Wicked Game", "Valse", "Babel"];
 
 const covers = [
     "", 
-    "https://ia600400.us.archive.org/21/items/mbid-3d5fca37-ab04-4c74-ba0e-48f557f9485f/mbid-3d5fca37-ab04-4c74-ba0e-48f557f9485f-13694326388.jpg",
+    "https://ia601409.us.archive.org/25/items/mbid-45e4f5aa-2c9f-49f4-a277-f1feac61b1be/mbid-45e4f5aa-2c9f-49f4-a277-f1feac61b1be-18029669974_thumb250.jpg",
 
-    "https://ia600609.us.archive.org/29/items/mbid-412a55e2-4d85-4577-afcc-29f1cd062960/mbid-412a55e2-4d85-4577-afcc-29f1cd062960-16979283605.jpg",
+    "https://ia802901.us.archive.org/21/items/mbid-d9d0b2f4-323b-4324-89c6-9690e68356fb/mbid-d9d0b2f4-323b-4324-89c6-9690e68356fb-25959298714_thumb250.jpg",
 
-    "https://ia600300.us.archive.org/24/items/mbid-a623132b-c433-46a9-817a-7c0d88fd8d7f/mbid-a623132b-c433-46a9-817a-7c0d88fd8d7f-2835071589.jpg",
+    "https://ia802906.us.archive.org/35/items/mbid-731abf13-8aab-4363-9e3d-2ce732aed41a/mbid-731abf13-8aab-4363-9e3d-2ce732aed41a-25790225818_thumb250.jpg",
 
-    "https://ia800307.us.archive.org/6/items/mbid-8e7746ca-7832-41b2-a731-de5b0010f37d/mbid-8e7746ca-7832-41b2-a731-de5b0010f37d-13249592911.jpg"
+    "https://ia801709.us.archive.org/19/items/mbid-0d9d2fab-b09d-4c69-8b0e-e8a183e17de8/mbid-0d9d2fab-b09d-4c69-8b0e-e8a183e17de8-23929656522_thumb250.jpg"
 ];
 
 export {artists, songs, covers};
