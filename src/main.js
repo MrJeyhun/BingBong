@@ -63,43 +63,49 @@ const shuffle = () => {
     }
 }
 
+const getRandomAudio = () => {
+    playlist_index = Math.floor(Math.random() * songs.length);
+}
+
 const nextSong = () => {
     playBtn.classList.replace('fa-pause', 'fa-play');
     setTimeout(() => {
         playBtn.classList.replace('fa-play', 'fa-pause');
 
     }, 500)
-    timeSlider.value = 0;
 
     if (shuffleSwitch) {
-        playlist_index = Math.floor(Math.random() * songs.length);
-        console.log('playlistIndex', playlist_index);
+        getRandomAudio();
 
         if (playlist_index == 0) playlist_index = 1;
-        setInfo(playlist_index);
-        getAudio();
     } else {
         playlist_index++;
         console.log('playlist index', playlist_index);
 	    if (playlist_index > songs.length - 1) {
 		    playlist_index = 1;
         }
-        getAudio();
     }
-    
+    timeSlider.value = 0;
+    setInfo(playlist_index);
+    getAudio();
 }
 
 const prevSong = () => {
-    playlist_index--;
-	if (playlist_index < 1) {
-		playlist_index = songs.length - 1;
+    if (shuffleSwitch) {
+        getRandomAudio();
+        if (playlist_index == 0) playlist_index = 1;        
+    } else {
+        playlist_index--;
+	    if (playlist_index < 1) {
+		    playlist_index = songs.length - 1;
+        }
+        playBtn.classList.replace('fa-pause', 'fa-play');
+        setTimeout(() => {
+            playBtn.classList.replace('fa-play', 'fa-pause');
+        }, 500)
     }
-    playBtn.classList.replace('fa-pause', 'fa-play');
-    setTimeout(() => {
-        playBtn.classList.replace('fa-play', 'fa-pause');
-
-    }, 500)
     timeSlider.value = 0;
+    setInfo(playlist_index);
     getAudio();
 }
 
@@ -107,13 +113,20 @@ const switchSong = () => {
     if (playlist_index == (songs.length - 1)) {
         playlist_index = 0;
     } else {
-        playlist_index++;	
+        if (shuffleSwitch) {
+            getRandomAudio();
+            if (playlist_index == 0) playlist_index = 1;
+        } else {
+            playlist_index++;	
+        }
     }
     playBtn.classList.replace('fa-pause', 'fa-play');
     setTimeout(() => {
         playBtn.classList.replace('fa-play', 'fa-pause');
 
     }, 500)
+    timeSlider.value = 0;
+    setInfo(playlist_index);
     getAudio();
 }
 
@@ -134,6 +147,7 @@ const goThisTime = (event) => {
     } else {
         if (seeking) {
             console.log('tmsldVl', timeSlider.value);
+            //FIXME:
             // timeSlider.value = event.clientX - timeSlider.offsetLeft;
             getTo = audio.duration * (timeSlider.value / 100);
             console.log('getTo', getTo);
@@ -149,6 +163,9 @@ const setVoice = () => {
 const seekTimeUpdate = () => {
     if (audio.duration) {
         let getCurrentTimeFromAudio = audio.currentTime * (100 / audio.duration);
+        //FIXME:
+        //slider point movement
+        timeSlider.value = getCurrentTimeFromAudio;
         let currentMinutes = Math.floor(audio.currentTime / 60);
         let currentSeconds = Math.floor(audio.currentTime - currentMinutes * 60);
         let durationMinutes = Math.floor(audio.duration / 60);
@@ -204,6 +221,7 @@ timeSlider.addEventListener('mouseup', () => {
 voiceSlider.addEventListener('mousemove', () => setVoice());
 
 audio.addEventListener('timeupdate', () => seekTimeUpdate());
+
 audio.addEventListener('ended', () => switchSong());
 
 
