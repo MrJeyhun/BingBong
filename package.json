@@ -4,7 +4,7 @@
   "description": "An audioplayer, created with Vanilla Js",
   "main": "index.js",
   "scripts": {
-    "compile:sass": "node-sass assets/sass/main.scss assets/css/index.css -w",
+    "compile:sass": "node-sass public/sass/main.scss public/css/index.css -w",
     "start": "node server/server.js"
   },
   "author": "MrJeyhun",

@@ -66,33 +66,33 @@ body {
             background-size: 100% 100%;
             border-radius: 5px;
             overflow: hidden;
-
             transition: all 0.3s ease-in-out;
+        }
 
-            &--main {
-                z-index: 3000;
-                background-image: url(https://ia600400.us.archive.org/21/items/mbid-3d5fca37-ab04-4c74-ba0e-48f557f9485f/mbid-3d5fca37-ab04-4c74-ba0e-48f557f9485f-13694326388.jpg);
-            }
-            &--left,
-            &--right {
-                z-index: 1000;
-                transform: scale(0.75);
-                opacity: 0.3;
-            }
-            &--left {
-                margin-left: -8em;
-                background-image: url(https://ia800307.us.archive.org/6/items/mbid-8e7746ca-7832-41b2-a731-de5b0010f37d/mbid-8e7746ca-7832-41b2-a731-de5b0010f37d-13249592911.jpg);
-            }
-            &--right {
-                margin-left: 8em;
-                background-image: url(https://ia600609.us.archive.org/29/items/mbid-412a55e2-4d85-4577-afcc-29f1cd062960/mbid-412a55e2-4d85-4577-afcc-29f1cd062960-16979283605.jpg);
-            }
-            &--back {
-                opacity: 0.05;
-                -webkit-transform: scale(0.5);
-                -moz-transform: scale(0.5);
-                transform: scale(0.5);
-            }
+        .maincover {
+            z-index: 3000;
+        }
+
+        .leftcover {
+            margin-left: -8em;
+        }
+
+        .leftcover,
+        .rightcover {
+            z-index: 1000;
+            transform: scale(0.75);
+            opacity: 0.3;
+        }
+
+        .rightcover {
+            margin-left: 8em;
+        }
+
+        .backcover {
+            opacity: 0.05;
+            -webkit-transform: scale(0.5);
+            -moz-transform: scale(0.5);
+            transform: scale(0.5);
         }
 
         ul {
