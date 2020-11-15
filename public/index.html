@@ -46,16 +46,16 @@
         <div class="app__controls">
           <div class="app__controls__slider">
             <!-- Current time -->
-            <span>00:00</span>
+            <span id='currenttime'>00:00</span>
              <!--class removed  -->
-            <input type="range" min="1" max="100" value="0" id="myRange">
+            <input type="range" min="0" max="100" value="0" id="timeslider" step="1">
             <!-- Total time -->
-            <span>05:23</span> 
+            <span id='duration'>05:23</span> 
           </div>
 
           <div class="app__controls__voice">
             <li id="volume" class="fas fa-fw fa-volume-down"></li>
-            <input type="range" min="1" max="30" value="30" id="myRange">
+            <input type="range" min="0" max="100" value="100" id="voiceslider" step="1">
           </div>
 
           <ul class="app__controls__btns">

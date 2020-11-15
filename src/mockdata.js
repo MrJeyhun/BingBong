@@ -1,6 +1,6 @@
 const artists = ["", "Pink Floyd", "Chris Isaak", "Evgeniko", "Gustavo Santaolalla"];
 
-const songs = ["", "Wish You Were Here", "Wicked Game", "Valse", "Babel"];
+const songs = ["", "Wish-You-Were-Here", "Wicked-Game", "Valse", "Babel"];
 
 const covers = [
     "", 
