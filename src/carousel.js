@@ -1,4 +1,5 @@
 import {artists, songs, covers} from "./mockdata.js";
+import {playlist_index, shuffleSwitch} from "./main.js";
 
 const coversLength = document.querySelectorAll(".app__carousel ul li.app__carousel__item").length;
 export const NEXT = 1;
@@ -14,6 +15,7 @@ export const setCovers = () => {
 }
 
 export const setInfo = (id) => {
+    console.log('setInfoID', id);
     document.getElementById('song').textContent = `${songs[id]}`;
     document.getElementById('artist').textContent = `${artists[id]}`;
 }
