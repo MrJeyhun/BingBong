@@ -15,7 +15,7 @@ let durationTime = document.getElementById('duration');
 //Control variables
 let seeking = false;
 let seekTo;
-let playlist_index = 0;
+let playlist_index = 1;
     
 //Directory and extensions
 const dir = "../music/";
@@ -45,6 +45,12 @@ const random = () => {
     playlist_index = randomIndex;
 }
 
+const getAudio = () => {
+    if (playlist_index == 0) playlist_index = 1;
+    audio.src = dir+songs[playlist_index]+ext;
+	audio.play();
+}
+
 const loop = () => {
     if (audio.loop) {
         audio.loop = false;
@@ -58,17 +64,21 @@ const loop = () => {
 }
 
 const nextSong = () => {
+    console.log('playlist index', playlist_index);
     playlist_index++;
+    console.log('playlist index', playlist_index);
 	if (playlist_index > songs.length - 1) {
-		playlist_index = 0;
+		playlist_index = 1;
     }
+    getAudio();
 }
 
 const prevSong = () => {
     playlist_index--;
-	if (playlist_index < 0) {
+	if (playlist_index < 1) {
 		playlist_index = songs.length - 1;
     }
+    getAudio();
 }
 
 const switchSong = () => {
@@ -77,9 +87,12 @@ const switchSong = () => {
     } else {
         playlist_index++;	
     }
+    getAudio();
 }
 
 const playOrPause = () => {
+    console.log('audiosrc', audio.src);
+
     if (audio.paused) {
         audio.play();
     } else {
