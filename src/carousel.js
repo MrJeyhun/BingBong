@@ -33,7 +33,7 @@ export const swap = (direction) => {
         document.getElementById(`${leftItem}`).classList.replace('backcover', 'leftcover')
 
         startItem--;
-        if (startItem < 1) startItem = coversLength;
+        startItem < 1 && (startItem = coversLength);
     }
 
     if (direction == NEXT) {
@@ -71,7 +71,7 @@ export const swap = (direction) => {
 
         startItem++;
         position = 0;
-        if (startItem > coversLength) startItem = 1;
+        startItem > coversLength && (startItem = 1);
     }
 
     setInfo(document.querySelector('.maincover').getAttribute('id'));

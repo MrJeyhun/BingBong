@@ -11,56 +11,55 @@ const timeSlider = document.getElementById('timeslider');
 const voiceSlider = document.getElementById('voiceslider');
 let currentTime = document.getElementById('currenttime');
 let durationTime = document.getElementById('duration');
-
 //Control variables
 let seeking = false;
 let getTo;
 export let playlist_index = 1;
 export let shuffleSwitch = false;
+timeSlider.value = 0;
     
 //Directory and extensions
 const dir = "../music/";
-const ext = ".mp3";
+let ext = ".mp3";
 //For running firefox or opera
 const agent = navigator.userAgent.toLowerCase();
-if(agent.indexOf('firefox') != -1 || agent.indexOf('opera') != -1) {
-    ext = ".ogg";
-}
+agent.indexOf('firefox') != -1 || agent.indexOf('opera') != -1 ? ext = ".ogg" : null;
+
 
 // Audio Object
 const audio = new Audio();
 audio.src = dir+songs[1]+ext;
 audio.loop = false;
+// durationTime.innerHTML = audio.duration;
+
 
 
 //Control functions
 
 const getAudio = () => {
-    if (playlist_index == 0) playlist_index = 1;
+    playlist_index == 0 && (playlist_index = 1);
     audio.src = dir+songs[playlist_index]+ext;
 	audio.play();
 }
 
 const loop = () => {
-    if (audio.loop) {
-        audio.loop = false;
-        repeatBtn.style.color = '#000';
-
-    } else {
-        audio.loop = true;
-        repeatBtn.style.color = '#2ECC71';
-
-    }
+    audio.loop ? (
+        audio.loop = false,
+        repeatBtn.style.color = '#000'
+    ) : (
+        audio.loop = true,
+        repeatBtn.style.color = '#2ECC71'
+    )
 }
 
 const shuffle = () => {
-    if (shuffleSwitch) {
-        shuffleSwitch = false;
-        shuffleBtn.style.color = '#000';
-    } else {
-        shuffleSwitch = true;
-        shuffleBtn.style.color = '#2ECC71';
-    }
+    shuffleSwitch ? (
+        shuffleSwitch = false,
+        shuffleBtn.style.color = '#000'
+    ) : (
+        shuffleSwitch = true,
+        shuffleBtn.style.color = '#2ECC71'
+    )
 }
 
 const getRandomAudio = () => {
@@ -131,24 +130,7 @@ const switchSong = () => {
 }
 
 const playOrPause = () => {
-    // console.log('audiosrc', audio.src);
-    console.log('audicrnttime', audio.currentTime);
-
-    if (audio.paused) {
-        audio.play();
-    } else {
-        audio.pause();
-    }
-}
-
-const goThisTime = (event) => {
-    if (audio.duration == 0) {
-        null
-    } else {
-        if (seeking) {
-	    audio.currentTime = timeSlider.value;
-        }
-    } 
+    audio.paused ? audio.play() : audio.pause();
 }
 
 const setVoice = () => {
@@ -157,21 +139,26 @@ const setVoice = () => {
 
 const seekTimeUpdate = () => {
     if (audio.duration) {
-//         let getCurrentTimeFromAudio = audio.currentTime * (100 / audio.duration);
-        //FIXME:
-        //slider point movement
-//         timeSlider.value = getCurrentTimeFromAudio;
-	timeSlider.value = audio.currentTime;
+	    timeSlider.value = audio.currentTime;
         let currentMinutes = Math.floor(audio.currentTime / 60);
         let currentSeconds = Math.floor(audio.currentTime - currentMinutes * 60);
         let durationMinutes = Math.floor(audio.duration / 60);
         let durationSeconds = Math.floor(audio.duration - durationMinutes * 60);
-        if(currentSeconds < 10){ currentSeconds = "0"+currentSeconds; }
-        if(durationSeconds < 10){ durationSeconds = "0"+durationSeconds; }
-        if(currentMinutes < 10){ currentMinutes = "0"+currentMinutes; }
-        if(durationMinutes < 10){ durationMinutes = "0"+durationMinutes; }
+        currentSeconds < 10 &&  (currentSeconds = "0"+currentSeconds); 
+        durationSeconds < 10 && (durationSeconds = "0"+durationSeconds); 
+        currentMinutes < 10 &&  (currentMinutes = "0"+currentMinutes); 
+        durationMinutes < 10 &&  (durationMinutes = "0"+durationMinutes); 
         currentTime.innerHTML = currentMinutes+":"+currentSeconds;
         durationTime.innerHTML = durationMinutes+":"+durationSeconds;
+        
+        // currentTime.remove();
+        // let currentTimeHTML = document.createElement("span");
+        // currentTimeHTML.id = 'currenttime';
+        // let text = document.createTextNode(currentMinutes+":"+currentSeconds);
+        // console.log('text', text);
+        // console.log('testt', currentTime.replaceWith(currentTimeHTML));
+        // currentTimeHTML.appendChild(text);      
+        // currentTime.replaceWith(currentTimeHTML); 
     } else {
         currentTime.innerHTML = "00"+":"+"00";
         durationTime.innerHTML = "00"+":"+"00";
@@ -181,11 +168,9 @@ const seekTimeUpdate = () => {
 //event listeners of control buttons
 playBtn.addEventListener('click', (e) => {
     // Change Play/Pause icon
-    if (e.target.classList.contains('fa-play')) {
-        e.target.classList.replace('fa-play', 'fa-pause');
-    } else {
-        e.target.classList.replace('fa-pause', 'fa-play');
-    }
+    e.target.classList.contains('fa-play') ? 
+    e.target.classList.replace('fa-play', 'fa-pause') :
+     e.target.classList.replace('fa-pause', 'fa-play');
     playOrPause();
 });
 
