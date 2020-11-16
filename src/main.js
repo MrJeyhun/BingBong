@@ -146,12 +146,7 @@ const goThisTime = (event) => {
         null
     } else {
         if (seeking) {
-            console.log('tmsldVl', timeSlider.value);
-            //FIXME:
-            // timeSlider.value = event.clientX - timeSlider.offsetLeft;
-            getTo = audio.duration * (timeSlider.value / 100);
-            console.log('getTo', getTo);
-            audio.currentTime = getTo;
+	    audio.currentTime = timeSlider.value;
         }
     } 
 }
@@ -162,10 +157,11 @@ const setVoice = () => {
 
 const seekTimeUpdate = () => {
     if (audio.duration) {
-        let getCurrentTimeFromAudio = audio.currentTime * (100 / audio.duration);
+//         let getCurrentTimeFromAudio = audio.currentTime * (100 / audio.duration);
         //FIXME:
         //slider point movement
-        timeSlider.value = getCurrentTimeFromAudio;
+//         timeSlider.value = getCurrentTimeFromAudio;
+	timeSlider.value = audio.currentTime;
         let currentMinutes = Math.floor(audio.currentTime / 60);
         let currentSeconds = Math.floor(audio.currentTime - currentMinutes * 60);
         let durationMinutes = Math.floor(audio.duration / 60);
@@ -207,16 +203,8 @@ repeatBtn.addEventListener('click', () => loop());
 
 shuffleBtn.addEventListener('click', () => shuffle());
 
-timeSlider.addEventListener('mousedown', (event) => {
-    seeking = true;
-    goThisTime(event); 
-});
-timeSlider.addEventListener('mousemove', (event) => {
-    goThisTime(event); 
-});
-timeSlider.addEventListener('mouseup', () => {
-    seeking = false; 
-});
+timeSlider.addEventListener('input', () => audio.currentTime = timeSlider.value);
+
 
 voiceSlider.addEventListener('mousemove', () => setVoice());
 
