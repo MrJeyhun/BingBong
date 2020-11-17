@@ -21,9 +21,6 @@ timeSlider.value = 0;
 //Directory and extensions
 const dir = "../music/";
 let ext = ".mp3";
-//For running firefox or opera
-const agent = navigator.userAgent.toLowerCase();
-agent.indexOf('firefox') != -1 || agent.indexOf('opera') != -1 ? ext = ".ogg" : null;
 
 
 // Audio Object
